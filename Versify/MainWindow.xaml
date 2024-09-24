@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Versify"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Versify" Height="500" Width="800" >
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="Recent"/>
+            <ColumnDefinition Width="350" x:Name="Lyrics"/>
+            <ColumnDefinition x:Name="Currently_playing"/>
+        </Grid.ColumnDefinitions>
+        <!--<Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>-->
+        <Label x:Name="test" />
     </Grid>
 </Window>

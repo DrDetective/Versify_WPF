@@ -8,6 +8,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SpotifyAPI;
+using SpotifyAPI.Web;
 
 namespace Versify
 {
@@ -19,6 +21,7 @@ namespace Versify
         public MainWindow()
         {
             InitializeComponent();
+            var spotify = new SpotifyClient();
         }
     }
 }
