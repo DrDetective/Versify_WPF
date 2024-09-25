@@ -13,7 +13,11 @@ namespace Versify
         public static Token token { get; set; }
         public static async Task GetTokenAsync()
         {
-            string auth = Convert.ToBase64String(Encoding.UTF8.GetBytes(cliendID + ":"+ clientSecret));
+            string clientID = "e413dce8b9ec4620a87f9ddda158adf6";
+            string clientSecret = "3d96f783188b443d962527b8e9802de1";
+            
+
+            string auth = Convert.ToBase64String(Encoding.UTF8.GetBytes(clientID + ":"+ clientSecret));
             List<KeyValuePair<string, string>> args = new List<KeyValuePair<string, string>>
             {
                 new KeyValuePair<string, string>("grant_type", "client_credetials")
