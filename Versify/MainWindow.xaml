@@ -5,16 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Versify"
         mc:Ignorable="d"
-        Title="Versify" Height="500" Width="800" >
+        Title="Versify" Height="500" Width="800" ResizeMode="NoResize" >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition x:Name="Recent"/>
-            <ColumnDefinition Width="350" x:Name="Lyrics"/>
+            <ColumnDefinition Width="400" x:Name="Lyrics"/>
             <ColumnDefinition x:Name="Currently_playing"/>
         </Grid.ColumnDefinitions>
-        <!--<Grid.RowDefinitions>
-            <RowDefinition/>
-        </Grid.RowDefinitions>-->
-        <Label x:Name="test" />
+        <StackPanel>
+            <!--pokud se mi povede pripojit spotify tak tady bude nedavno vyhledane nebo nedavno poslouchane -->
+            <TextBox x:Name="Search" Width="180" FontSize="20" Height="30" VerticalAlignment="Top" Margin="0,5,0,0" Background="LightGray" />
+        </StackPanel>
+        
+        <TextBox x:Name="LyricsTextBox" Grid.Column="1" FontSize="14" Foreground="Black" TextWrapping="Wrap"
+                  IsReadOnly="True" VerticalScrollBarVisibility="Auto" />
+        
+        <StackPanel Grid.Column="2">
+            <!--info o autorovi a fotka songy nebo alba apod -->            
+        </StackPanel>
     </Grid>
 </Window>
