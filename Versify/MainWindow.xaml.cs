@@ -34,11 +34,11 @@ namespace Versify
 
                     if (!string.IsNullOrEmpty(lyrics))
                     {
-                        LyricsTextBox.Text = lyrics;
+                        LyricsTBox.Text = lyrics;
                     }
                     else
                     {
-                        LyricsTextBox.Text = "Lyrics not found.";
+                        LyricsTBox.Text = "Lyrics not found.";
                     }
                 }
                 catch (Exception ex)
@@ -82,12 +82,10 @@ namespace Versify
                     var lyricsDoc = new HtmlDocument();
                     lyricsDoc.LoadHtml(lyricsHtml);
 
-                    // Clean up each lyrics container
                     foreach (var brNode in lyricsDoc.DocumentNode.SelectNodes("//br") ?? new HtmlNodeCollection(null))
                     {
                         brNode.ParentNode.ReplaceChild(lyricsDoc.CreateTextNode("\n"), brNode);
                     }
-
                     foreach (var pNode in lyricsDoc.DocumentNode.SelectNodes("//p") ?? new HtmlNodeCollection(null))
                     {
                         pNode.ParentNode.ReplaceChild(lyricsDoc.CreateTextNode("\n" + pNode.InnerText + "\n"), pNode);
@@ -95,23 +93,16 @@ namespace Versify
                     var unwantedNodes = lyricsDoc.DocumentNode.SelectNodes("//a[@class='referent'] | //script | //style");
                     if (unwantedNodes != null)
                     {
-                        foreach (var annotation in unwantedNodes)
-                        {
-                            annotation.Remove();
-                        }
+                        foreach (var annotation in unwantedNodes) { annotation.Remove(); }
                     }
-                    // Append cleaned lyrics from this container
                     string cleanedLyrics = lyricsDoc.DocumentNode.InnerText.Trim();
                     cleanedLyrics = WebUtility.HtmlDecode(cleanedLyrics);
 
-                    // Insert a single newline after each verse/section
-                    cleanedLyrics = Regex.Replace(cleanedLyrics, @"(\n{2,})", "\n"); // Replace multiple newlines with a single newline
-                    cleanedLyrics = Regex.Replace(cleanedLyrics, @"(\[.*?\])", "\n$1"); // Add a new line before square brackets
+                    cleanedLyrics = Regex.Replace(cleanedLyrics, @"(\n{2,})", "\n");
+                    cleanedLyrics = Regex.Replace(cleanedLyrics, @"(\[.*?\])", "\n$1");
 
-                    // Add to full lyrics with a single new line between different containers for clarity
-                    fullLyrics += cleanedLyrics + "\n"; // Add a single new line between different containers
+                    fullLyrics += cleanedLyrics + "\n";
                 }
-                // Trim any extra newlines at the start or end
                 return fullLyrics.Trim();
             }
             catch (Exception ex) { MessageBox.Show("Error scraping lyrics: " + ex.Message); }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Versify"
         mc:Ignorable="d"
-        Title="Versify" Height="500" Width="800" ResizeMode="NoResize" >
+        Title="Versify" Height="500" Width="800" ResizeMode="NoResize" Background="SlateGray" >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition x:Name="Recent"/>
@@ -17,11 +17,13 @@
             <TextBox x:Name="Search" Width="180" FontSize="20" Height="30" VerticalAlignment="Top" Margin="0,5,0,0" Background="LightGray" />
         </StackPanel>
         
-        <TextBox x:Name="LyricsTextBox" Grid.Column="1" FontSize="14" Foreground="Black" TextWrapping="Wrap"
+        <TextBox x:Name="LyricsTBox" Grid.Column="1" FontSize="14" Foreground="Black" Background="DimGray" TextWrapping="Wrap"
                   IsReadOnly="True" VerticalScrollBarVisibility="Auto" />
         
         <StackPanel Grid.Column="2">
-            <!--info o autorovi a fotka songy nebo alba apod -->            
+            <Image x:Name="AlbumCoverIMG" Height="180" Width="180" Margin="10" />
+            <!--info o autorovi a fotka songy nebo alba apod -->
+            
         </StackPanel>
     </Grid>
 </Window>
