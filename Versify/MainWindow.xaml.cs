@@ -11,12 +11,14 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Security.Policy;
+using System.Diagnostics;
 
 namespace Versify
 {
     public partial class MainWindow : Window
     {
         private string accessToken = "UryxQVRI0k9N1PAigqGnCCxpiiWI6aust_v9kRn-sS9lyPW1pdfrhqM3JxKQC83v";
+        public static string Full_lyrics;
         public MainWindow()
         {
             InitializeComponent();
@@ -31,7 +33,7 @@ namespace Versify
                 {
                     var lyrics = await GetLyricsAsync(songName);
 
-                    if (!string.IsNullOrEmpty(lyrics)) { LyricsTBox.Text = lyrics; }
+                    if (!string.IsNullOrEmpty(lyrics)) { LyricsTBox.Text = lyrics; Full_lyrics = lyrics; Debug.Write(lyrics); }
                     else { LyricsTBox.Text = "Lyrics not found"; }
                 }
                 catch (Exception ex) { MessageBox.Show("Error fetching lyrics: " + ex.Message); } 
@@ -88,5 +90,11 @@ namespace Versify
             catch (Exception ex) { MessageBox.Show("Error scraping lyrics: " + ex.Message); }
             return null;
         } //cleaning lyrics
+
+        private void FullLyrics_Click(object sender, RoutedEventArgs e)
+        {
+            FullLyrics flyrics = new FullLyrics();
+            flyrics.Show();
+        }
     }
 }

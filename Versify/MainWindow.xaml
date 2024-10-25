@@ -14,17 +14,20 @@
         </Grid.ColumnDefinitions>
         <StackPanel>
             <!--pokud se mi povede pripojit spotify tak tady bude nedavno vyhledane nebo nedavno poslouchane -->
-            <TextBox x:Name="Search" Width="180" FontSize="20" Height="30" VerticalAlignment="Top" Margin="0,5,0,0" Background="LightGray" BorderBrush="DimGray" BorderThickness="1.7" />
+            <TextBox x:Name="Search" Width="180" FontSize="20" Height="30" VerticalAlignment="Top" Margin="0,5,0,0"
+                     Background="LightGray" BorderBrush="DimGray" BorderThickness="1.7" ToolTip="Enter your desired song" />
         </StackPanel>
-        
+
         <TextBox x:Name="LyricsTBox" Grid.Column="1" FontSize="14" Foreground="AntiqueWhite" Background="DimGray" TextWrapping="Wrap"
-                  IsReadOnly="True" VerticalScrollBarVisibility="Auto" FontStyle="Italic" />
+                  IsReadOnly="True" VerticalScrollBarVisibility="Auto" FontStyle="Italic" BorderThickness="0"  />
         
         <StackPanel Grid.Column="2">
-            <Image x:Name="AlbumCover" Height="180" Width="180" Margin="10" Visibility="Visible" />
-            <TextBox x:Name="AlbumName" Foreground="Black" Background="SlateGray" VerticalAlignment="Top" BorderThickness="0" FontSize="25" TextWrapping="Wrap" />
+            <Image x:Name="AlbumCover" Height="180" Width="180" Margin="10" Visibility="Visible" ToolTip="Soon Album cover will be here" />
+            <TextBox x:Name="AlbumName" Foreground="Black" Background="SlateGray" VerticalAlignment="Top" BorderThickness="0"
+                     FontSize="25" TextWrapping="Wrap" ToolTip="Soon there will be name of album or artist" />
             <!--info o autorovi a fotka songy nebo alba apod coz nekdy udelam protoze stale na tom pracuju -->
-            
         </StackPanel>
+        <Button x:Name="FullLyrics" Grid.Column="2" Width="20" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                Background="White" Margin="2" ToolTip="Full Lyrics" Click="FullLyrics_Click" />
     </Grid>
 </Window>
