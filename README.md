@@ -1,7 +1,9 @@
 # Versify
 Vyhledávač na text písní protože cracked spotify je nemůže načíst a mě to sere  
 Vyhledá text přes Genius.com takže najde skoro všechno  
-Pokud to nenajde text songy tak stačí zadat za jméno "by (interpret)" a mělo by to snad najít žádaný texty
+Pokud to nenajde text songy tak stačí zadat jméno umělce pod TextBox na zadání písně  
+A lze si otevřít další okno pro zobrazení celého textu po vyhledaní písně  
+(pozdeji nahraju novou fotku, ted nemam cas xd)
 <br>
 <br>
 <br>
