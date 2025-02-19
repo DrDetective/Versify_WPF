@@ -1,4 +1,5 @@
-# Versify
+# Versify  
+## Tak nic nefunguje download :(  
 Vyhledávač na text písní protože cracked spotify je nemůže načíst a mě to sere  
 Vyhledá text přes Genius.com takže najde skoro všechno  
 Pokud to nenajde text songy tak stačí zadat jméno umělce pod TextBox na zadání písně  
