@@ -23,9 +23,9 @@ namespace Versify
         public FullLyrics()
         {
             InitializeComponent();
-            MainWindow nevim = new MainWindow();
-            LyricsTBox.Text = 
-            Debug.Write(LyricsTBox);
+            //MainWindow nevim = new MainWindow();
+            FullLyricsTBox.Text = MainWindow.Full_lyrics;
+            Debug.Write(FullLyricsTBox);
         }
     }
 }

@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Versify"
         mc:Ignorable="d"
-        Title="FullLyrics" Height="800" Width="450" ResizeMode="NoResize">
-    
-        <TextBox x:Name="LyricsTBox" Grid.Column="1" FontSize="14" Foreground="AntiqueWhite" Background="DimGray" TextWrapping="Wrap"
-                IsReadOnly="True" VerticalScrollBarVisibility="Auto" FontStyle="Italic" BorderThickness="0"  />
+        Title="Versify - FullLyrics" Height="800" Width="450" ResizeMode="NoResize">
+
+    <TextBox x:Name="FullLyricsTBox" Grid.Column="1" FontSize="14" Foreground="AntiqueWhite" Background="DimGray" TextWrapping="Wrap"
+                IsReadOnly="True" VerticalScrollBarVisibility="Auto" FontStyle="Italic" BorderThickness="0" />
 </Window>

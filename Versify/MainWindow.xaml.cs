@@ -23,20 +23,22 @@ namespace Versify
         {
             InitializeComponent();
             Search.KeyDown += SongSearchBox_KeyDown;
+            Artist_Search.KeyDown += SongSearchBox_KeyDown;
         }
         private async void SongSearchBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
                 string songName = Search.Text;
+                string artistName = Artist_Search.Text;
                 try
                 {
-                    var lyrics = await GetLyricsAsync(songName);
+                    var lyrics = await GetLyricsAsync(songName + artistName);
 
                     if (!string.IsNullOrEmpty(lyrics)) { LyricsTBox.Text = lyrics; Full_lyrics = lyrics; Debug.Write(lyrics); }
                     else { LyricsTBox.Text = "Lyrics not found"; }
                 }
-                catch (Exception ex) { MessageBox.Show("Error fetching lyrics: " + ex.Message); } 
+                catch (Exception ex) { MessageBox.Show("Error fetching lyrics: " + ex.Message); }
             }
         }
         private async Task<string> GetLyricsAsync(string query)
